@@ -1,0 +1,857 @@
+{
+  "id": "minimax-h3-director-r2v-identity-star7-8step",
+  "revision": 0,
+  "last_node_id": 13,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "PreviewAny",
+      "pos": [
+        900,
+        400
+      ],
+      "size": [
+        640,
+        200
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Director 运行报告",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 9,
+      "type": "PreviewAny",
+      "pos": [
+        900,
+        640
+      ],
+      "size": [
+        210,
+        122
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "fps",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 10,
+      "type": "PreviewAny",
+      "pos": [
+        1140,
+        640
+      ],
+      "size": [
+        210,
+        122
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "frame_count",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 11,
+      "type": "MarkdownNote",
+      "pos": [
+        -1243.351202164104,
+        643.529411764706
+      ],
+      "size": [
+        360,
+        320
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "人物一致性 R2V · 10段约60秒",
+      "properties": {},
+      "widgets_values": [
+        "## 人物一致性 R2V · 本机适配\n\n已预设：Ref2VA INT8 → Star7 FP16 → 8步 LoRA 0.75 → 8192分块 → Director。\n\n1. 打开导演台上方的 **公共参数**。\n2. 在公共参考图的 **Picture 1** 上传女主角清晰参考图。\n3. 已内置10段剧情，总计1444帧≈60.17秒。\n4. 段间引导已开启为39帧；公共人物提示词会自动拼接到每段。\n5. 首次建议保持0.4MP测试；未上传 Picture 1 不要运行。\n"
+      ],
+      "widgets_values_named": {
+        "text": "## 人物一致性 R2V · 本机适配\n\n已预设：Ref2VA INT8 → Star7 FP16 → 8步 LoRA 0.75 → 8192分块 → Director。\n\n1. 打开导演台上方的 **公共参数**。\n2. 在公共参考图的 **Picture 1** 上传女主角清晰参考图。\n3. 已内置10段剧情，总计1444帧≈60.17秒。\n4. 段间引导已开启为39帧；公共人物提示词会自动拼接到每段。\n5. 首次建议保持0.4MP测试；未上传 Picture 1 不要运行。\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 1,
+      "type": "MiniMaxH3FP16LoaderStar7",
+      "pos": [
+        -1396.934057225518,
+        66.45277380305816
+      ],
+      "size": [
+        520,
+        70
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "title": "Star7 FP16 Ref2VA 加载（RTX20）",
+      "properties": {
+        "cnr_id": "minimax-h3-fp16-exact-star7",
+        "ver": "2.0.6",
+        "Node name for S&R": "MiniMaxH3FP16LoaderStar7",
+        "aux_id": "star7code/minimax-h3-fp16-exact-star7",
+        "models": [
+          {
+            "name": "Minimax_H3\\minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+            "directory": "diffusion_models"
+          }
+        ]
+      },
+      "widgets_values": [
+        "MinimaxH3\\minimax_h3_fl2va_pruned_bf16.safetensors"
+      ],
+      "widgets_values_named": {
+        "unet_name": "MinimaxH3\\minimax_h3_fl2va_pruned_bf16.safetensors"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 2,
+      "type": "CLIPLoader",
+      "pos": [
+        -1390.5169449260525,
+        179.3583214091745
+      ],
+      "size": [
+        360,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            2
+          ]
+        }
+      ],
+      "title": "CLIP (minimax / Qwen3-VL)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "CLIPLoader",
+        "models": [
+          {
+            "name": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+            "directory": "text_encoders"
+          }
+        ]
+      },
+      "widgets_values": [
+        "MinimaxH3\\qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "minimax",
+        "default"
+      ],
+      "widgets_values_named": {
+        "clip_name": "MinimaxH3\\qwen3vl_32b_minimax_h3_int8_convrot.safetensors",
+        "type": "minimax",
+        "device": "default"
+      }
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [
+        -1396.934057225518,
+        346.45277380305816
+      ],
+      "size": [
+        360,
+        58
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "title": "Video VAE",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "minimax_h3_video_vae_fp16.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "MinimaxH3\\minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "MinimaxH3\\minimax_h3_video_vae_fp16.safetensors"
+      }
+    },
+    {
+      "id": 4,
+      "type": "VAELoader",
+      "pos": [
+        -1396.934057225518,
+        466.45277380305816
+      ],
+      "size": [
+        360,
+        58
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "title": "Audio VAE",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "VAELoader",
+        "models": [
+          {
+            "name": "minimax_h3_audio_vae_fp32.safetensors",
+            "directory": "vae"
+          }
+        ]
+      },
+      "widgets_values": [
+        "MinimaxH3\\minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "vae_name": "MinimaxH3\\minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    {
+      "id": 12,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        -836.934057225518,
+        66.45277380305816
+      ],
+      "size": [
+        410,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "title": "8步 Turbo LoRA（人物一致性 0.75）",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.31.0",
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "minimax_h3_turbo_4步加速_DasiwaREF2VAHybridV1_curveproj1025_compat_v001-T8.safetensors",
+        0.75
+      ],
+      "widgets_values_named": {
+        "lora_name": "minimax_h3_turbo_4步加速_DasiwaREF2VAHybridV1_curveproj1025_compat_v001-T8.safetensors",
+        "strength_model": 0.75
+      },
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 6,
+      "type": "CreateVideo",
+      "pos": [
+        897.8572453853902,
+        115.89560621932729
+      ],
+      "size": [
+        280,
+        120
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 6
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        24,
+        8
+      ],
+      "widgets_values_named": {
+        "fps": 24,
+        "bit_depth": 8
+      }
+    },
+    {
+      "id": 7,
+      "type": "SaveVideo",
+      "pos": [
+        1261.963602633569,
+        105.1816614904962
+      ],
+      "size": [
+        320,
+        130
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.33.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/MiniMaxH3_Director_r2v",
+        "mp4",
+        "h264",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/MiniMaxH3_Director_r2v",
+        "format": "mp4",
+        "codec": "h264",
+        "codec.encoding": "auto"
+      }
+    },
+    {
+      "id": 13,
+      "type": "MiniMaxH3ActivationChunkStar7",
+      "pos": [
+        -839.0730946586731,
+        221.39037433155076
+      ],
+      "size": [
+        410,
+        298
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "title": "Star7 分块（CK INT8 / 8192）",
+      "properties": {
+        "cnr_id": "minimax-h3-chunk-star7",
+        "ver": "2.9.1",
+        "Node name for S&R": "MiniMaxH3ActivationChunkStar7",
+        "aux_id": "star7code/minimax-h3-chunk-star7"
+      },
+      "widgets_values": [
+        8192,
+        true,
+        true,
+        8192,
+        8192,
+        "实验功能已移除",
+        true,
+        "hybrid_sm75_ck_sla_all_int8"
+      ],
+      "widgets_values_named": {
+        "chunk_tokens": 8192,
+        "auto_halve_on_oom": true,
+        "verbose": true,
+        "mlp_chunk_tokens": 8192,
+        "qkv_chunk_tokens": 8192,
+        "disable_dynamic_prefetch": "实验功能已移除",
+        "reuse_mlp_weights": true,
+        "attention_backend": "hybrid_sm75_ck_sla_all_int8"
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 5,
+      "type": "MiniMaxH3Director",
+      "pos": [
+        -280,
+        112.78432688993561
+      ],
+      "size": [
+        1032.745002297794,
+        1911.4510282628676
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "video_vae",
+          "type": "VAE",
+          "link": 3
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 4
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 2
+        },
+        {
+          "name": "i2v_groups",
+          "shape": 7,
+          "type": "MMX_DIR_GROUP",
+          "link": null
+        },
+        {
+          "name": "r2v_groups",
+          "shape": 7,
+          "type": "MMX_DIR_GROUP",
+          "link": null
+        },
+        {
+          "name": "refine",
+          "shape": 7,
+          "type": "MMX_DIR_REFINE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            5
+          ]
+        },
+        {
+          "name": "audio",
+          "shape": 6,
+          "type": "AUDIO",
+          "links": [
+            6
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            7,
+            10
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": [
+            11
+          ]
+        },
+        {
+          "name": "source_images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "report",
+          "type": "STRING",
+          "links": [
+            8
+          ]
+        },
+        {
+          "name": "images_pre_refine",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "aux_id": "AIMixer/ComfyUI_MiniMaxH3_Director",
+        "ver": "d655912262bcd70ad43c3a431879be9539d8e054",
+        "Node name for S&R": "MiniMaxH3Director"
+      },
+      "widgets_values": [
+        "r2v — 参考主体生视频(Reference to Video)",
+        "模式：Ref2VA | 总时长60秒 | 每段15秒 | 16:9 | 人物锚定：Picture 1\n\nsubject_definitions:\n<Subject 1> is the male presenter: A hyper-realistic portrait of a tech YouTuber in his 30s, half-body shot, sitting casually on a modern ergonomic chair, set in a high-end tech studio. The background is a stunning wall filled with vintage and modern electronic test equipment — oscilloscopes with glowing green waveforms, spectrum analyzers with colorful frequency displays, digital multimeters, signal generators, and various rack-mounted instruments neatly arranged on industrial metal shelves, soft blue and amber LED indicator lights scattered across the equipment.\n﻿\nProfessional cinematic lighting setup:a clean top key light that wraps around the hair and shoulders, combined with a dramatic left-right split lighting technique — warm light from the left side creating a cozy skin tone, cool cyan/blue light from the right side creating a modern tech atmosphere, subtle rim lights from behind to separate the subject from the background.\n﻿\nThe subject has natural realistic skin texture with visible pores, fine vellus hairs, natural skin imperfections, slight stubble shadow, moisturized lips with natural reflections, realistic subsurface scattering on the ears and nose tip. Wearing a simple well-fitted dark charcoal henley shirt or a black merino wool crewneck sweater, slight smile, confident and approachable expression, looking directly at the camera lens, one hand resting on the desk with a small NAS device or motherboard next to it.\n﻿\nPhotorealistic, 8k resolution, shot on ARRI Alexa 65 with Cooke S7i lenses, f/2.8 shallow depth of field, subtle film grain, natural color grading with teal-orange tone, ultra-detailed, sharp focus on eyes, professional YouTube studio vibe, editorial photography style\n﻿\n<Picture 1> is fully referenced: the presenter's reference photo.\n\nintegrated_multimodal_description:\n\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\nholographic UI ticks and chimes, satisfying whoosh when icons split and\ntransform, soft particle dissolve sounds, gentle data-processing whir.\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\ncalm and conversational, slightly building in energy across segments.\n\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\nthe frame. The only text that appears is within the holographic UI elements\ndescribed above — \"94%\", \"14TB\", \"HM-SMR\", \"fnOS\", \"¥130\", \"DIY START\" and\nthe various icons. These are part of the holographic scene, not subtitles.\n\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\nholographic UI ticks and chimes, satisfying whoosh when icons split and\ntransform, soft particle dissolve sounds, gentle data-processing whir.\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\ncalm and conversational, slightly building in energy across segments.\n\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\nthe frame. The only text that appears is within the holographic UI elements\ndescribed above — \"94%\", \"14TB\", \"HM-SMR\", \"fnOS\", \"¥130\", \"DIY START\" and\nthe various icons. These are part of the holographic scene",
+        "采样设置",
+        1,
+        900012736040912,
+        "randomize",
+        24,
+        1216,
+        672,
+        1216,
+        1448,
+        "{\"version\":5,\"editMode\":\"segment\",\"timelineMode\":\"prompt_batch\",\"totalFrames\":1448,\"frameRate\":24,\"width\":1216,\"height\":672,\"refMaxSize\":1216,\"durationSec\":3.3,\"output\":{\"mode\":\"fixed\",\"aspectRatio\":\"16:9 (宽屏)\",\"megapixels\":0.8,\"multiple\":32,\"longEdge\":1216,\"width\":1216,\"height\":672,\"maxExportFrames\":0,\"exportMode\":\"all\",\"audioMode\":\"generate\",\"continuityEnabled\":true,\"continuityOverlapFrames\":39},\"videoClips\":[],\"video\":{\"fileName\":\"\",\"videoFile\":\"\",\"subfolder\":\"\",\"type\":\"input\",\"frames\":[],\"frameMap\":[],\"sourceFrameCount\":1448,\"deletedSourceRanges\":[]},\"global\":{\"taskType\":\"r2v — 参考主体生视频(Reference to Video)\",\"prompt\":\"模式：Ref2VA | 总时长60秒 | 每段15秒 | 16:9 | 人物锚定：Picture 1\\n\\nsubject_definitions:\\n<Subject 1> is the male presenter: A hyper-realistic portrait of a tech YouTuber in his 30s, half-body shot, sitting casually on a modern ergonomic chair, set in a high-end tech studio. The background is a stunning wall filled with vintage and modern electronic test equipment — oscilloscopes with glowing green waveforms, spectrum analyzers with colorful frequency displays, digital multimeters, signal generators, and various rack-mounted instruments neatly arranged on industrial metal shelves, soft blue and amber LED indicator lights scattered across the equipment.\\n﻿\\nProfessional cinematic lighting setup:a clean top key light that wraps around the hair and shoulders, combined with a dramatic left-right split lighting technique — warm light from the left side creating a cozy skin tone, cool cyan/blue light from the right side creating a modern tech atmosphere, subtle rim lights from behind to separate the subject from the background.\\n﻿\\nThe subject has natural realistic skin texture with visible pores, fine vellus hairs, natural skin imperfections, slight stubble shadow, moisturized lips with natural reflections, realistic subsurface scattering on the ears and nose tip. Wearing a simple well-fitted dark charcoal henley shirt or a black merino wool crewneck sweater, slight smile, confident and approachable expression, looking directly at the camera lens, one hand resting on the desk with a small NAS device or motherboard next to it.\\n﻿\\nPhotorealistic, 8k resolution, shot on ARRI Alexa 65 with Cooke S7i lenses, f/2.8 shallow depth of field, subtle film grain, natural color grading with teal-orange tone, ultra-detailed, sharp focus on eyes, professional YouTube studio vibe, editorial photography style\\n﻿\\n<Picture 1> is fully referenced: the presenter's reference photo.\\n\\nintegrated_multimodal_description:\\n\\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\\nholographic UI ticks and chimes, satisfying whoosh when icons split and\\ntransform, soft particle dissolve sounds, gentle data-processing whir.\\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\\ncalm and conversational, slightly building in energy across segments.\\n\\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\\nthe frame. The only text that appears is within the holographic UI elements\\ndescribed above — \\\"94%\\\", \\\"14TB\\\", \\\"HM-SMR\\\", \\\"fnOS\\\", \\\"¥130\\\", \\\"DIY START\\\" and\\nthe various icons. These are part of the holographic scene, not subtitles.\\n\\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\\nholographic UI ticks and chimes, satisfying whoosh when icons split and\\ntransform, soft particle dissolve sounds, gentle data-processing whir.\\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\\ncalm and conversational, slightly building in energy across segments.\\n\\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\\nthe frame. The only text that appears is within the holographic UI elements\\ndescribed above — \\\"94%\\\", \\\"14TB\\\", \\\"HM-SMR\\\", \\\"fnOS\\\", \\\"¥130\\\", \\\"DIY START\\\" and\\nthe various icons. These are part of the holographic scene\",\"refs\":[{\"index\":0,\"imageFile\":\"a4b1d6dae60da936ce495496b8cd2b0b14833bf4204941fafdb5df40212a2d70.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"}],\"refAudios\":[],\"refVideos\":[],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"continuousReference\":false,\"commonEnabled\":true,\"commonCollapsed\":false,\"genImage\":{\"imageFile\":\"\"}},\"segments\":[{\"id\":\"mtef79mhuyt3z\",\"start\":0,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 1] At 00:00.000 to 00:15.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing cyan and amber\\ninstrument panels and holographic data screens. To his right, a large\\ntranslucent cyan holographic hard drive icon appears, pulsing gently with a\\nred warning glow around its edge. S1 looks at it briefly with a knowing\\nexpression, then turns back to camera, raising his right hand slightly with\\npalm open. The hard drive icon splits open, revealing a cluster of small\\nfile icons (photo thumbnails, video clips) spilling out and orbiting around\\nit. A large red \\\"94%\\\" appears above the drive, glowing brightly. S1 gestures\\ntoward the overflowing files with his left hand, then looks back at camera\\nwith a slight shrug and a helpless smile. The overflowing drive and files\\nfade. A calm blue \\\"OK\\\" icon appears briefly. S1 lowers his hands, looks\\ndirectly at camera with a confident, slightly amused expression.\\n<d>[Chinese] 最近拍的照片和视频越来越多，电脑硬盘已经快塞满了。一看剩余空间，只剩百分之六。加硬盘吧，现在的价格涨得实在太离谱了。于是我花了点时间研究，找到了一个性价比超高的方案。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":false},{\"id\":\"mtefa5fjusy37\",\"start\":362,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 2] At 00:15.000 to 00:30.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing cyan and amber\\ninstrument panels. To his right, a holographic server rack icon appears,\\nwith \\\"14TB\\\" in bold white digits and \\\"HM-SMR\\\" in smaller amber text below\\nit. S1 gestures toward it with his right hand, palm open, expression calm\\nand explanatory. The server rack icon splits into two side-by-side windows.\\nLeft window shows a Windows logo with a red X. Right window shows a Linux\\npenguin with a green checkmark. A glowing arrow points from the Linux side\\nto a new window labeled \\\"NAS\\\" in cyan. S1 points at the Linux side with his\\nleft index finger, then traces the arrow to the NAS window, looking slightly\\npleased. The left window fades. A new holographic screen appears showing the\\n\\\"fnOS\\\" logo in bright cyan, with a glowing checkmark beneath it. A network\\nconnection animation arcs from the NAS window to a Mac icon and a Windows\\nicon on either side. S1 smiles warmly, nods once, and gestures with both\\npalms open toward the final setup.\\n<d>[Chinese] 我看中了一种叫 HM-SMR 的服务器硬盘，十四TB的大容量，价格非常合理。但这种盘不能在 Windows 直接用，只能用在 Linux 系统。刚好最近开源的飞牛系统完美支持这种硬盘，做好 NAS 之后，Windows 和 Mac 都能直接共享访问。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true},{\"id\":\"mtefbcfhl81wp\",\"start\":724,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 3] At 00:30.000 to 00:45.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing instrument panels. To\\nhis right, a holographic film projector icon appears, projecting a beam of\\nlight that spreads into a grid of movie poster thumbnails. Next to it, a\\nmusic note icon pulses gently. S1 gestures toward the film icon with his\\nright hand, expression warm and enthusiastic. The film and music icons fade.\\nIn their place, a holographic AI brain icon appears in a soft amber glow,\\nwith a glowing cyan chat bubble floating beside it. The chat bubble shows a\\nquick animated typing effect. S1 points at the brain icon with his right\\nhand, then looks at camera with a slightly raised eyebrow and a knowing\\nsmile. The floating icons all gather into a single small holographic\\ncomputer box that gently pulses — representing the final NAS setup. A\\nglowing \\\"¥130\\\" appears above it in bold. S1 looks at the final display,\\nsmiles confidently, then looks directly at the camera with both hands\\ngesturing toward the box.\\n<d>[Chinese] 而且飞牛系统还能帮你打造自己的影视中心，所有电影自动匹配海报和信息。更重要的是，我可以在这上面部署一个 AI 智能体，七天二十四小时的私人助手。研究了一圈发现，一台一百三十块的工控小主机就能跑，算下来性价比真的超高。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true},{\"id\":\"mtefcu5bojg8q\",\"start\":1086,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 4] At 00:45.000 to 00:60.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing cyan and amber\\ninstrument panels. The small holographic computer box from the previous shot\\nis still floating gently to his right, pulsing with a soft cyan glow. S1\\nlooks at it briefly, then turns to camera with a warm, slightly eager\\nexpression, rubbing his hands together once. The holographic computer box\\nexpands into a larger translucent screen showing quick abstract visuals: a\\nmotherboard, a screwdriver turning, a blinking cursor on a terminal window\\n— all fast-floating and swirling into a ring. A glowing white text in the\\ncenter reads \\\"DIY START\\\" in bold. S1 gestures toward the screen with his\\nright hand, palm open, then looks back at camera with a confident nod. The\\nswirling visuals condense into a single glowing play button icon in cyan,\\npulsing gently. S1 lowers his hand, smiles directly at camera with a look\\nof anticipation, tilting his head slightly as if inviting the viewer to\\njoin him.\\n<d>[Chinese] 说了这么多，这个方案到底靠不靠谱？下面我们就来实际操作一下，看看这台小主机到底怎么装。从硬件选配到系统安装，踩过的坑和经验，一次全分享给你。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true}],\"gen\":{\"defaultFrameCount\":141},\"runSelectEnabled\":true,\"runSelection\":[0,1,2,3],\"liveTaePreview\":true,\"batchDetailMode\":\"all\",\"shots\":[{\"id\":\"mteexri3v083p\",\"durationSec\":3.3,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"startImage\":null,\"endImage\":null}],\"keyframes\":[{\"id\":\"mteexri3v083p\",\"imageFile\":\"\",\"width\":0,\"height\":0,\"start\":0,\"length\":90,\"frameCount\":90,\"durationSec\":3.3,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false}]}",
+        "高级采样",
+        12,
+        "euler_ancestral",
+        "beta",
+        12,
+        3,
+        "性能",
+        true,
+        false,
+        ""
+      ],
+      "widgets_values_named": {
+        "task_type": "r2v — 参考主体生视频(Reference to Video)",
+        "global_prompt": "模式：Ref2VA | 总时长60秒 | 每段15秒 | 16:9 | 人物锚定：Picture 1\n\nsubject_definitions:\n<Subject 1> is the male presenter: A hyper-realistic portrait of a tech YouTuber in his 30s, half-body shot, sitting casually on a modern ergonomic chair, set in a high-end tech studio. The background is a stunning wall filled with vintage and modern electronic test equipment — oscilloscopes with glowing green waveforms, spectrum analyzers with colorful frequency displays, digital multimeters, signal generators, and various rack-mounted instruments neatly arranged on industrial metal shelves, soft blue and amber LED indicator lights scattered across the equipment.\n﻿\nProfessional cinematic lighting setup:a clean top key light that wraps around the hair and shoulders, combined with a dramatic left-right split lighting technique — warm light from the left side creating a cozy skin tone, cool cyan/blue light from the right side creating a modern tech atmosphere, subtle rim lights from behind to separate the subject from the background.\n﻿\nThe subject has natural realistic skin texture with visible pores, fine vellus hairs, natural skin imperfections, slight stubble shadow, moisturized lips with natural reflections, realistic subsurface scattering on the ears and nose tip. Wearing a simple well-fitted dark charcoal henley shirt or a black merino wool crewneck sweater, slight smile, confident and approachable expression, looking directly at the camera lens, one hand resting on the desk with a small NAS device or motherboard next to it.\n﻿\nPhotorealistic, 8k resolution, shot on ARRI Alexa 65 with Cooke S7i lenses, f/2.8 shallow depth of field, subtle film grain, natural color grading with teal-orange tone, ultra-detailed, sharp focus on eyes, professional YouTube studio vibe, editorial photography style\n﻿\n<Picture 1> is fully referenced: the presenter's reference photo.\n\nintegrated_multimodal_description:\n\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\nholographic UI ticks and chimes, satisfying whoosh when icons split and\ntransform, soft particle dissolve sounds, gentle data-processing whir.\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\ncalm and conversational, slightly building in energy across segments.\n\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\nthe frame. The only text that appears is within the holographic UI elements\ndescribed above — \"94%\", \"14TB\", \"HM-SMR\", \"fnOS\", \"¥130\", \"DIY START\" and\nthe various icons. These are part of the holographic scene, not subtitles.\n\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\nholographic UI ticks and chimes, satisfying whoosh when icons split and\ntransform, soft particle dissolve sounds, gentle data-processing whir.\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\ncalm and conversational, slightly building in energy across segments.\n\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\nthe frame. The only text that appears is within the holographic UI elements\ndescribed above — \"94%\", \"14TB\", \"HM-SMR\", \"fnOS\", \"¥130\", \"DIY START\" and\nthe various icons. These are part of the holographic scene",
+        "bd_grp_sample": "采样设置",
+        "cfg": 1,
+        "seed": 900012736040912,
+        "control_after_generate": "randomize",
+        "frame_rate": 24,
+        "width": 1216,
+        "height": 672,
+        "ref_max_size": 1216,
+        "total_frames": 1448,
+        "timeline_data": "{\"version\":5,\"editMode\":\"segment\",\"timelineMode\":\"prompt_batch\",\"totalFrames\":1448,\"frameRate\":24,\"width\":1216,\"height\":672,\"refMaxSize\":1216,\"durationSec\":3.3,\"output\":{\"mode\":\"fixed\",\"aspectRatio\":\"16:9 (宽屏)\",\"megapixels\":0.8,\"multiple\":32,\"longEdge\":1216,\"width\":1216,\"height\":672,\"maxExportFrames\":0,\"exportMode\":\"all\",\"audioMode\":\"generate\",\"continuityEnabled\":true,\"continuityOverlapFrames\":39},\"videoClips\":[],\"video\":{\"fileName\":\"\",\"videoFile\":\"\",\"subfolder\":\"\",\"type\":\"input\",\"frames\":[],\"frameMap\":[],\"sourceFrameCount\":1448,\"deletedSourceRanges\":[]},\"global\":{\"taskType\":\"r2v — 参考主体生视频(Reference to Video)\",\"prompt\":\"模式：Ref2VA | 总时长60秒 | 每段15秒 | 16:9 | 人物锚定：Picture 1\\n\\nsubject_definitions:\\n<Subject 1> is the male presenter: A hyper-realistic portrait of a tech YouTuber in his 30s, half-body shot, sitting casually on a modern ergonomic chair, set in a high-end tech studio. The background is a stunning wall filled with vintage and modern electronic test equipment — oscilloscopes with glowing green waveforms, spectrum analyzers with colorful frequency displays, digital multimeters, signal generators, and various rack-mounted instruments neatly arranged on industrial metal shelves, soft blue and amber LED indicator lights scattered across the equipment.\\n﻿\\nProfessional cinematic lighting setup:a clean top key light that wraps around the hair and shoulders, combined with a dramatic left-right split lighting technique — warm light from the left side creating a cozy skin tone, cool cyan/blue light from the right side creating a modern tech atmosphere, subtle rim lights from behind to separate the subject from the background.\\n﻿\\nThe subject has natural realistic skin texture with visible pores, fine vellus hairs, natural skin imperfections, slight stubble shadow, moisturized lips with natural reflections, realistic subsurface scattering on the ears and nose tip. Wearing a simple well-fitted dark charcoal henley shirt or a black merino wool crewneck sweater, slight smile, confident and approachable expression, looking directly at the camera lens, one hand resting on the desk with a small NAS device or motherboard next to it.\\n﻿\\nPhotorealistic, 8k resolution, shot on ARRI Alexa 65 with Cooke S7i lenses, f/2.8 shallow depth of field, subtle film grain, natural color grading with teal-orange tone, ultra-detailed, sharp focus on eyes, professional YouTube studio vibe, editorial photography style\\n﻿\\n<Picture 1> is fully referenced: the presenter's reference photo.\\n\\nintegrated_multimodal_description:\\n\\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\\nholographic UI ticks and chimes, satisfying whoosh when icons split and\\ntransform, soft particle dissolve sounds, gentle data-processing whir.\\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\\ncalm and conversational, slightly building in energy across segments.\\n\\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\\nthe frame. The only text that appears is within the holographic UI elements\\ndescribed above — \\\"94%\\\", \\\"14TB\\\", \\\"HM-SMR\\\", \\\"fnOS\\\", \\\"¥130\\\", \\\"DIY START\\\" and\\nthe various icons. These are part of the holographic scene, not subtitles.\\n\\noverall_soundscape: Low ambient hum of sci-fi studio instruments, subtle\\nholographic UI ticks and chimes, satisfying whoosh when icons split and\\ntransform, soft particle dissolve sounds, gentle data-processing whir.\\nnon_diegetic_music: Warm ambient electronic bed, soft synth pad, 90BPM,\\ncalm and conversational, slightly building in energy across segments.\\n\\nCRITICAL: No subtitles, no captions, no text overlay at bottom or sides of\\nthe frame. The only text that appears is within the holographic UI elements\\ndescribed above — \\\"94%\\\", \\\"14TB\\\", \\\"HM-SMR\\\", \\\"fnOS\\\", \\\"¥130\\\", \\\"DIY START\\\" and\\nthe various icons. These are part of the holographic scene\",\"refs\":[{\"index\":0,\"imageFile\":\"a4b1d6dae60da936ce495496b8cd2b0b14833bf4204941fafdb5df40212a2d70.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"}],\"refAudios\":[],\"refVideos\":[],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"continuousReference\":false,\"commonEnabled\":true,\"commonCollapsed\":false,\"genImage\":{\"imageFile\":\"\"}},\"segments\":[{\"id\":\"mtef79mhuyt3z\",\"start\":0,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 1] At 00:00.000 to 00:15.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing cyan and amber\\ninstrument panels and holographic data screens. To his right, a large\\ntranslucent cyan holographic hard drive icon appears, pulsing gently with a\\nred warning glow around its edge. S1 looks at it briefly with a knowing\\nexpression, then turns back to camera, raising his right hand slightly with\\npalm open. The hard drive icon splits open, revealing a cluster of small\\nfile icons (photo thumbnails, video clips) spilling out and orbiting around\\nit. A large red \\\"94%\\\" appears above the drive, glowing brightly. S1 gestures\\ntoward the overflowing files with his left hand, then looks back at camera\\nwith a slight shrug and a helpless smile. The overflowing drive and files\\nfade. A calm blue \\\"OK\\\" icon appears briefly. S1 lowers his hands, looks\\ndirectly at camera with a confident, slightly amused expression.\\n<d>[Chinese] 最近拍的照片和视频越来越多，电脑硬盘已经快塞满了。一看剩余空间，只剩百分之六。加硬盘吧，现在的价格涨得实在太离谱了。于是我花了点时间研究，找到了一个性价比超高的方案。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":false},{\"id\":\"mtefa5fjusy37\",\"start\":362,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 2] At 00:15.000 to 00:30.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing cyan and amber\\ninstrument panels. To his right, a holographic server rack icon appears,\\nwith \\\"14TB\\\" in bold white digits and \\\"HM-SMR\\\" in smaller amber text below\\nit. S1 gestures toward it with his right hand, palm open, expression calm\\nand explanatory. The server rack icon splits into two side-by-side windows.\\nLeft window shows a Windows logo with a red X. Right window shows a Linux\\npenguin with a green checkmark. A glowing arrow points from the Linux side\\nto a new window labeled \\\"NAS\\\" in cyan. S1 points at the Linux side with his\\nleft index finger, then traces the arrow to the NAS window, looking slightly\\npleased. The left window fades. A new holographic screen appears showing the\\n\\\"fnOS\\\" logo in bright cyan, with a glowing checkmark beneath it. A network\\nconnection animation arcs from the NAS window to a Mac icon and a Windows\\nicon on either side. S1 smiles warmly, nods once, and gestures with both\\npalms open toward the final setup.\\n<d>[Chinese] 我看中了一种叫 HM-SMR 的服务器硬盘，十四TB的大容量，价格非常合理。但这种盘不能在 Windows 直接用，只能用在 Linux 系统。刚好最近开源的飞牛系统完美支持这种硬盘，做好 NAS 之后，Windows 和 Mac 都能直接共享访问。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true},{\"id\":\"mtefbcfhl81wp\",\"start\":724,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 3] At 00:30.000 to 00:45.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing instrument panels. To\\nhis right, a holographic film projector icon appears, projecting a beam of\\nlight that spreads into a grid of movie poster thumbnails. Next to it, a\\nmusic note icon pulses gently. S1 gestures toward the film icon with his\\nright hand, expression warm and enthusiastic. The film and music icons fade.\\nIn their place, a holographic AI brain icon appears in a soft amber glow,\\nwith a glowing cyan chat bubble floating beside it. The chat bubble shows a\\nquick animated typing effect. S1 points at the brain icon with his right\\nhand, then looks at camera with a slightly raised eyebrow and a knowing\\nsmile. The floating icons all gather into a single small holographic\\ncomputer box that gently pulses — representing the final NAS setup. A\\nglowing \\\"¥130\\\" appears above it in bold. S1 looks at the final display,\\nsmiles confidently, then looks directly at the camera with both hands\\ngesturing toward the box.\\n<d>[Chinese] 而且飞牛系统还能帮你打造自己的影视中心，所有电影自动匹配海报和信息。更重要的是，我可以在这上面部署一个 AI 智能体，七天二十四小时的私人助手。研究了一圈发现，一台一百三十块的工控小主机就能跑，算下来性价比真的超高。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true},{\"id\":\"mtefcu5bojg8q\",\"start\":1086,\"length\":362,\"frameCount\":362,\"durationSec\":15,\"prompt\":\"[Shot 4] At 00:45.000 to 00:60.000. Medium shot, static camera. S1 stands\\ncenter frame. Behind him, dark blue wall with glowing cyan and amber\\ninstrument panels. The small holographic computer box from the previous shot\\nis still floating gently to his right, pulsing with a soft cyan glow. S1\\nlooks at it briefly, then turns to camera with a warm, slightly eager\\nexpression, rubbing his hands together once. The holographic computer box\\nexpands into a larger translucent screen showing quick abstract visuals: a\\nmotherboard, a screwdriver turning, a blinking cursor on a terminal window\\n— all fast-floating and swirling into a ring. A glowing white text in the\\ncenter reads \\\"DIY START\\\" in bold. S1 gestures toward the screen with his\\nright hand, palm open, then looks back at camera with a confident nod. The\\nswirling visuals condense into a single glowing play button icon in cyan,\\npulsing gently. S1 lowers his hand, smiles directly at camera with a look\\nof anticipation, tilting his head slightly as if inviting the viewer to\\njoin him.\\n<d>[Chinese] 说了这么多，这个方案到底靠不靠谱？下面我们就来实际操作一下，看看这台小主机到底怎么装。从硬件选配到系统安装，踩过的坑和经验，一次全分享给你。</d>\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true}],\"gen\":{\"defaultFrameCount\":141},\"runSelectEnabled\":true,\"runSelection\":[0,1,2,3],\"liveTaePreview\":true,\"batchDetailMode\":\"all\",\"shots\":[{\"id\":\"mteexri3v083p\",\"durationSec\":3.3,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"startImage\":null,\"endImage\":null}],\"keyframes\":[{\"id\":\"mteexri3v083p\",\"imageFile\":\"\",\"width\":0,\"height\":0,\"start\":0,\"length\":90,\"frameCount\":90,\"durationSec\":3.3,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false}]}",
+        "bd_grp_advanced": "高级采样",
+        "steps": 12,
+        "sampler": "euler_ancestral",
+        "scheduler": "beta",
+        "shift_video": 12,
+        "shift_audio": 3,
+        "bd_grp_perf": "性能",
+        "clear_vram_between_segments": true,
+        "export_source_images": false,
+        "minimax_director_ui": ""
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      13,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      12,
+      1,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      13,
+      12,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      2,
+      0,
+      5,
+      3,
+      "CLIP"
+    ],
+    [
+      3,
+      3,
+      0,
+      5,
+      1,
+      "VAE"
+    ],
+    [
+      4,
+      4,
+      0,
+      5,
+      2,
+      "VAE"
+    ],
+    [
+      5,
+      5,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      6,
+      5,
+      1,
+      6,
+      1,
+      "AUDIO"
+    ],
+    [
+      7,
+      5,
+      2,
+      6,
+      2,
+      "FLOAT"
+    ],
+    [
+      8,
+      5,
+      5,
+      8,
+      0,
+      "*"
+    ],
+    [
+      9,
+      6,
+      0,
+      7,
+      0,
+      "VIDEO"
+    ],
+    [
+      10,
+      5,
+      2,
+      9,
+      0,
+      "*"
+    ],
+    [
+      11,
+      5,
+      3,
+      10,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "Ref2VA · Star7 FP16 · 8步分块",
+      "bounding": [
+        -1436.934057225518,
+        26.452773803058147,
+        1030,
+        560
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "MiniMax H3 Director",
+      "bounding": [
+        -320,
+        40,
+        1152.1832163085937,
+        1996.72894117647
+      ],
+      "color": "#8A8",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "输出",
+      "bounding": [
+        860,
+        40,
+        760,
+        760
+      ],
+      "color": "#b58",
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.49.6",
+    "note": "MiniMax H3 Director · r2v",
+    "ds": {
+      "scale": 0.5805614370603119,
+      "offset": [
+        1502.4134624374196,
+        110.03510152095184
+      ]
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
