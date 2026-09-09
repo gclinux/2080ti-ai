@@ -53,7 +53,7 @@ https://github.com/star7code/minimax-h3-chunk-star7.git
 TenStrip的**10Eros**  混合版(F2V ,REFV 合并版本 带NSWF 带4步lora )https://huggingface.co/TenStrip/10Eros-Max/tree/main?not-for-all-audiences=true 
 
 
- **Singularity 微调版本**: https://www.bilibili.com/video/BV1sebn6rEcV 网盘:https://pan.quark.cn/s/6d17529b1181#/list/share 对比测试:https://www.bilibili.com/video/BV1rDbs6jE55 抱脸: https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity 
+ **Singularity 微调版本(减少崩脸情况)**: https://www.bilibili.com/video/BV1sebn6rEcV 网盘:https://pan.quark.cn/s/6d17529b1181#/list/share 对比测试:https://www.bilibili.com/video/BV1rDbs6jE55 抱脸: https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity 
 
 
 ### 声音修正
@@ -139,9 +139,12 @@ Json提示词skill下载链接：https://pan.quark.cn/s/ba8c92aea69d ,介绍:htt
 ## 导演台:
 
 ### 插件类导演台
+国内Ai搅拌机大佬做的下载: https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director (作者分享的网盘里有个200G的很多很乱的模型包,基本不用管,安装插件就好)
+基于AI搅拌机导演台群里更改的低内存版本(内存低于32推荐,会写硬盘做缓存): https://github.com/fvdfggh/minimax-h3-director-performance-optimization(和上面的二选一)
+
+
 闲兔导演台: https://www.bilibili.com/video/BV1Lk8a6fEfm (依赖很少,基本都是官方模型,但lora不能选文件,等更新比较好)
 
-国内Ai搅拌机大佬做的下载: https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director (作者分享的网盘里有个200G的很多很乱的模型包,基本不用管)
 
 国外darksidewalker版本:  https://github.com/darksidewalker/ComfyUI-DaSiWa-Nodes (未测试)
 
