@@ -1,16 +1,20 @@
 # comfyUi相关
 
-## 基础整合包:
+## 基础整合包 (选一个):
 
-群里太阳大神做的: sage 2.2+ cu133 + comfy3.2 :
+**群里太阳大神做的**: sage 2.2+ cu133 + comfy3.2 : (推荐)
 https://pan.quark.cn/s/1c89e061190c  (推荐,cu和sage比较新,对H3加速效果较好)
-闲兔大神:
+
+
+**闲兔**:
 https://pan.quark.cn/s/18cb797c5b26 提取码：sJqm  (2080ti 会安装sage 1.x + cu130 )
-AI搅拌手ComfyUI管理大师:
+
+
+**AI搅拌手ComfyUI管理大师:**
 https://comfyit.cn/article/286
 
 
-## 升级相关:
+## 升级相关 (可选,选一个):
 #### TE启动器:
 链接: https://pan.quark.cn/s/228999e7c788 (可以用升级ComfyUI,太阳的整合包里已经有)
 
@@ -20,7 +24,18 @@ https://comfyit.cn/article/286
  安装包链接：https://pan.quark.cn/s/18cb797c5b26 提取码：sJqm  (作者也是2080ti)  
 
 
-## MinMax H3:
+## 分块(2080必装)
+
+20系列分块
+有两个插件都是群里的星佬(胖大星)写的,记得github点星，unet也改了，帮助20系这种不支持bf16的优化量化
+
+https://github.com/star7code/minimax-h3-fp16-exact-star7.git 
+https://github.com/star7code/minimax-h3-chunk-star7.git
+
+参考工作流已经在代码里自己看.
+
+
+## MinMax H3 基础模型 (22G推荐官方int8无剪枝,11G 推荐GGUF量化,需要NSFW推荐10eros):
 **官方**:https://modelscope.cn/models/MiniMax/MiniMax-H3
 整理网盘:https://pan.quark.cn/s/5794a96c46a6  (31G和 21G模型4选2)
 
@@ -46,24 +61,21 @@ TenStrip的**10Eros**  混合版(F2V ,REFV 合并版本 带NSWF 带4步lora )htt
 https://github.com/T8mars/comfyui-minimax-h3-audio-T8
 
 
-
-## 加速
+## 加速(选一个)
 
 #### 4步/8步lora:
 
-##### 商汤
-
+##### 商汤(大家默认的官方加速)
 商汤lightx2v: https://github.com/ModelTC/Minimax-H3-Turbo#model-specs
 
-##### larryvr
-larryvrh (好用) :https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/tree/main
-最老版本
-网盘:  https://pan.quark.cn/s/e5468a05559f  可以用专用的lora加载插件(可以避免key报错,可以不装,用普通lora加载即可但会有报错,不影响生视频) : https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo 或者T8的lora加载器
-最新V4版本(好用):
+##### larryvr(推荐不油腻)
+larryvrh  :https://huggingface.co/larryvrh/MiniMax-H3-Turbo-Lora/tree/main
+最新V4版本(好用推荐):
 网盘：https://pan.quark.cn/s/99b6139d96e2
+需要用到特定加载器:
+https://github.com/Larryvrh/ComfyUI-MiniMax-H3-Turbo 或者T8的lora加载器
 
 ##### 阿里巴巴
-
 阿里巴巴8步lora:https://huggingface.co/alibaba-pai/MiniMax-H3-Acc-LoRAs
 
 
@@ -105,21 +117,6 @@ https://github.com/kijai/ComfyUI-SolAttn_triton
 低显存快速超分:https://github.com/ylchen333/ComfyUI-VOSR2
 
 
-
-
-
-
-## 分块
-
-20系列分块
-有两个插件都是群里的星佬(胖大星)写的,记得github点星，unet也改了，帮助20系这种不支持bf16的优化量化
-
-https://github.com/star7code/minimax-h3-fp16-exact-star7.git 
-https://github.com/star7code/minimax-h3-chunk-star7.git
-
-参考工作流:
-
-2080-H3-Activation-Chunk-Star7.json:链接：https://pan.quark.cn/s/6aa535f0fb58 ,绕开图片就是文生视频
 
 ## 越狱:
 
