@@ -29,10 +29,11 @@ https://comfyit.cn/article/286
 20系列分块
 有两个插件都是群里的星佬(胖大星)写的,记得github点星，unet也改了，帮助20系这种不支持bf16的优化量化
 
-https://github.com/star7code/minimax-h3-fp16-exact-star7.git 
+https://github.com/star7code/minimax-h3-fp16-exact-star7.git
+
 https://github.com/star7code/minimax-h3-chunk-star7.git
 
-参考工作流已经在代码里自己看.
+参考工作流(https://github.com/gclinux/2080ti-ai/tree/main/workflow/H3)
 
 
 ## MinMax H3 基础模型 (22G推荐官方int8无剪枝,11G 推荐GGUF量化,需要NSFW推荐10eros):
