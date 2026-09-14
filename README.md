@@ -64,7 +64,11 @@ https://github.com/T8mars/comfyui-minimax-h3-audio-T8
 
 ## 加速(选一个)
 
-#### 4步/8步lora:
+#### 4步/8步/3步lora:
+
+##### TaoMate三步lora
+https://huggingface.co/Robert1212star/TaoMate-H3-3Step-ComfyUI
+
 
 ##### 商汤(大家默认的官方加速)
 商汤lightx2v: https://github.com/ModelTC/Minimax-H3-Turbo#model-specs
