@@ -66,7 +66,7 @@ https://github.com/T8mars/comfyui-minimax-h3-audio-T8
 
 #### 4步/8步/3步lora:
 
-##### TaoMate三步lora
+##### 阿里TaoMate三步lora
 https://huggingface.co/Robert1212star/TaoMate-H3-3Step-ComfyUI
 
 
