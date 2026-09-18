@@ -196,14 +196,13 @@ https://www.423down.com/14531.html
 
 ## 大语言模型
 
-两张22G 跑千问, 100+tps,有三个项目:
+两张22G 跑千问, 100+tps,有两个项目,都是同个作者:
 
-https://github.com/weicj/vLLM-2080Ti-Definitive // 可以到200tps
+https://github.com/weicj/vLLM-2080Ti-Definitive // 可以到200tps,依赖nvlink
 
 
-// 以下都是100tps
 https://github.com/weicj/2080Ti-LLM-Toolbox 
-https://github.com/weicj/vLLM-2080Ti-Definitive
+
 
 
 单卡GGUF 千问量化版,最高可到50tps,上下文还能拉到255k ,内存最好32G以上
