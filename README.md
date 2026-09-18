@@ -199,6 +199,9 @@ https://www.423down.com/14531.html
 两张22G 跑千问, 100+tps,有三个项目:
 
 https://github.com/weicj/vLLM-2080Ti-Definitive // 可以到200tps
+
+
+// 以下都是100tps
 https://github.com/weicj/2080Ti-LLM-Toolbox 
 https://github.com/weicj/vLLM-2080Ti-Definitive
 
