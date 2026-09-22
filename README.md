@@ -6,10 +6,6 @@
 https://pan.quark.cn/s/1c89e061190c  (推荐,cu和sage比较新,对H3加速效果较好)
 
 
-**闲兔**:
-https://pan.quark.cn/s/18cb797c5b26 提取码：sJqm  (2080ti 会安装sage 1.x + cu130 )
-
-
 **AI搅拌手ComfyUI管理大师:**
 https://comfyit.cn/article/286
 
@@ -168,6 +164,10 @@ Oh MY : https://github.com/TFboy1/oh-my-minimaxh3-director (来自群里小芋�
 
 
 ## 生图
+
+### 千问
+[模型及常用工作流](https://pan.quark.cn/s/65fc5c267aa1#/list/share)
+### F2K
 
 ### 人物资产
 #### 人物多视角资产工作流:
