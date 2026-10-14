@@ -205,7 +205,7 @@ https://github.com/weicj/vLLM-2080Ti-Definitive // 可以到200tps,依赖nvlink
 
 https://github.com/weicj/2080Ti-LLM-Toolbox 
 
-单卡跑千问:https://github.com/Niko1221/Strata/blob/main/README.zh-CN.md 要求物理内存至少32G (32G可以跑Coder) 建议64G以上,虚拟内存会很卡
-
+单卡跑千问 Strata:https://github.com/Niko1221/Strata/blob/main/README.zh-CN.md 要求物理内存至少32G (32G可以跑Coder) 建议64G以上,虚拟内存会很卡
+单卡跑千问 Ninfer : https://github.com/1314521gjy/ninfer-fusion-kvmem  // 目前bug比较多,但速度比较快
 单卡GGUF 千问量化版,最高可到50tps,上下文还能拉到255k ,内存最好32G以上
 https://huggingface.co/finex666/models
