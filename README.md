@@ -109,7 +109,8 @@ https://github.com/kijai/ComfyUI-SolAttn_triton
 视频: https://www.bilibili.com/video/BV1Kjuo6wE6X/?spm_id_from=333.1387.homepage.video_card.click&vd_source=21da82be5ada7380d6171c0726234845
 链接：https://pan.quark.cn/s/ade7543de75e?pwd=vMJQ
 
-
+## 免lora强人物一致性
+https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod  // 只需要 8 张清晰照片，无需任何训练，就能让一个专属虚拟演员在不同的场景、动作甚至多机位下保持极高的一致性.
 
 ## 二次采样/小脸修复/高清超分
 
