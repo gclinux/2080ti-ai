@@ -142,6 +142,8 @@ Json提示词skill下载链接：https://pan.quark.cn/s/ba8c92aea69d ,介绍:htt
 ## 导演台:
 
 ### 插件类导演台
+Star7 导演台: https://github.com/star7code/star7-director.git // 推荐
+
 国内Ai搅拌机大佬做的下载: https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director (作者分享的网盘里有个200G的很多很乱的模型包,基本不用管,安装插件就好)
 
 基于AI搅拌机导演台群里更改的低内存版本(内存低于32推荐,会写硬盘做缓存): https://github.com/fvdfggh/minimax-h3-director-performance-optimization (和上面的二选一)
