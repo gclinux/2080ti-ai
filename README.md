@@ -11,9 +11,7 @@ https://github.com/KohakuBlueleaf/KohakUnlock
 
 https://pan.quark.cn/s/1c89e061190c  (推荐,cu和sage比较新,对H3加速效果较好)
 
-*** TE 整合包 ***: 
-
-https://pan.quark.cn/s/63ed157ef549 
+**TE 整合包 **:  https://pan.quark.cn/s/63ed157ef549 
 
 **AI搅拌手ComfyUI管理大师:**
 https://comfyit.cn/article/286
