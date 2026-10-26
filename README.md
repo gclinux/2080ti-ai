@@ -1,3 +1,8 @@
+# 算力解锁补丁
+作用:
+释放显卡软件锁了的算力.
+项目地址:
+https://github.com/KohakuBlueleaf/KohakUnlock
 # comfyUi相关
 
 ## 基础整合包 (选一个):
