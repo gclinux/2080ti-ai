@@ -8,8 +8,12 @@ https://github.com/KohakuBlueleaf/KohakUnlock
 ## 基础整合包 (选一个):
 
 **群里太阳大神做的**: sage 2.2+ cu133 + comfy3.2 : (推荐)
+
 https://pan.quark.cn/s/1c89e061190c  (推荐,cu和sage比较新,对H3加速效果较好)
 
+*** TE 整合包 ***: 
+
+https://pan.quark.cn/s/63ed157ef549 
 
 **AI搅拌手ComfyUI管理大师:**
 https://comfyit.cn/article/286
